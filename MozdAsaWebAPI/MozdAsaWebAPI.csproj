@@ -2,8 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MozdAsa.Data\MozdAsa.Data.csproj" />
     <ProjectReference Include="..\MozdAsa.IoC\MozdAsa.IoC.csproj" />
   </ItemGroup>
 
