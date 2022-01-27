@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{255C5A3C-C1B3-4CFE-BB5C-33C35F10F424}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{255C5A3C-C1B3-4CFE-BB5C-33C35F10F424}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{59CD9A80-9EA2-4135-B709-BE2A01B44F54}"
 EndProject
@@ -15,9 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebAPI", "WebAPI", "{8C5F45
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozdAsaAPI", "MozdAsaAPI\MozdAsaAPI.csproj", "{3DC5D0F7-9609-4A87-8C36-8EAEE31C1F4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozdAsa.Domain", "MozdAsa.Domain\MozdAsa.Domain.csproj", "{58EB6596-6475-4C85-B5C9-B36BC6FA3A10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozdAsa.Domain", "MozdAsa.Domain\MozdAsa.Domain.csproj", "{58EB6596-6475-4C85-B5C9-B36BC6FA3A10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozdAsa.Data", "MozdAsa.Data\MozdAsa.Data.csproj", "{A5085734-3342-4DB0-99DF-6BDD7E533555}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozdAsa.Data", "MozdAsa.Data\MozdAsa.Data.csproj", "{A5085734-3342-4DB0-99DF-6BDD7E533555}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozdAsa.Core", "MozdAsa.Core\MozdAsa.Core.csproj", "{0D23D4D3-BEBC-4192-B7F6-9F309406AEE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{A5085734-3342-4DB0-99DF-6BDD7E533555}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5085734-3342-4DB0-99DF-6BDD7E533555}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5085734-3342-4DB0-99DF-6BDD7E533555}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D23D4D3-BEBC-4192-B7F6-9F309406AEE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D23D4D3-BEBC-4192-B7F6-9F309406AEE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D23D4D3-BEBC-4192-B7F6-9F309406AEE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D23D4D3-BEBC-4192-B7F6-9F309406AEE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 		{3DC5D0F7-9609-4A87-8C36-8EAEE31C1F4F} = {8C5F454D-D5E4-4757-A9E6-C28F20EDED79}
 		{58EB6596-6475-4C85-B5C9-B36BC6FA3A10} = {59CD9A80-9EA2-4135-B709-BE2A01B44F54}
 		{A5085734-3342-4DB0-99DF-6BDD7E533555} = {CE54C555-4AD5-4370-9515-A6E0643DA719}
+		{0D23D4D3-BEBC-4192-B7F6-9F309406AEE7} = {255C5A3C-C1B3-4CFE-BB5C-33C35F10F424}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {18FB05DC-626F-4DEF-8346-CCD7C41C5A60}
