@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozdAsa.Data", "MozdAsa.Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozdAsa.Core", "MozdAsa.Core\MozdAsa.Core.csproj", "{0D23D4D3-BEBC-4192-B7F6-9F309406AEE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozdAsa.IoC", "MozdAsa.IoC\MozdAsa.IoC.csproj", "{BED80B3B-C0BF-4047-876B-4B452BA1023C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{0D23D4D3-BEBC-4192-B7F6-9F309406AEE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D23D4D3-BEBC-4192-B7F6-9F309406AEE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D23D4D3-BEBC-4192-B7F6-9F309406AEE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED80B3B-C0BF-4047-876B-4B452BA1023C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED80B3B-C0BF-4047-876B-4B452BA1023C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED80B3B-C0BF-4047-876B-4B452BA1023C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED80B3B-C0BF-4047-876B-4B452BA1023C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +58,7 @@ Global
 		{58EB6596-6475-4C85-B5C9-B36BC6FA3A10} = {59CD9A80-9EA2-4135-B709-BE2A01B44F54}
 		{A5085734-3342-4DB0-99DF-6BDD7E533555} = {CE54C555-4AD5-4370-9515-A6E0643DA719}
 		{0D23D4D3-BEBC-4192-B7F6-9F309406AEE7} = {255C5A3C-C1B3-4CFE-BB5C-33C35F10F424}
+		{BED80B3B-C0BF-4047-876B-4B452BA1023C} = {365F6108-2089-4E86-8497-0655F9A3F63A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {18FB05DC-626F-4DEF-8346-CCD7C41C5A60}
