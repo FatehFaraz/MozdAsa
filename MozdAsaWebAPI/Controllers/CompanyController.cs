@@ -16,16 +16,8 @@ namespace MozdAsaWebAPI.Controllers
     {
         private ICompanyService _companyService;
 
-        //private static readonly string[] Summaries = new[]
-        //{
-        //    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        //};
-
-        private readonly ILogger<CompanyController> _logger;
-
-        public CompanyController(ILogger<CompanyController> logger, ICompanyService companyService)
+        public CompanyController(ICompanyService companyService)
         {
-            _logger = logger;
             _companyService = companyService;
         }
 
@@ -36,9 +28,16 @@ namespace MozdAsaWebAPI.Controllers
             {
                 StatusCode = (int)HttpStatusCode.OK
             };
- 
-            return result;
-           
+            //Request.HttpContext.Response.Headers.Add("X-Count", _companyService.GetCount().ToString());
+            Request.HttpContext.Response.Headers.Add("X-Name", "Mohammad Fateh");
+            return result;       
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetCompany([FromRoute] int id)
+        {
+            var company = _companyService.GetCompanyById(id);
+            return Ok(company);
         }
     }
 }

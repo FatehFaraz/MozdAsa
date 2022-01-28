@@ -10,5 +10,7 @@ namespace MozdAsa.Domain.Interfaces
     public interface ICompanyRepository
     {
         IEnumerable<Company> GetCompanies();
+        Company GetCompanyById(int CompanyId);
+        Task<int> CountCompanies();
     }
 }

@@ -15,8 +15,8 @@ namespace MozdAsa.IoC
     {
         public static void RegisterServices(IServiceCollection service)
         {
-            service.AddScoped<ICompanyService, CompanyService>();
             service.AddScoped<ICompanyRepository, CompanyRepository>();
+            service.AddScoped<ICompanyService, CompanyService>();
         }
     }
 }

@@ -33,6 +33,8 @@ namespace MozdAsaWebAPI
                 options.UseSqlServer(Configuration.GetConnectionString("MozdAsaDbConection")));
             RegisterServices(services);
             services.AddControllers();
+            services.AddMemoryCache();
+            //services.AddAuthentication(jwtbearerDefaults)
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MozdAsaWebAPI", Version = "v1" });
@@ -48,7 +50,7 @@ namespace MozdAsaWebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MozdAsaWebAPI v1"));
             }
-
+            app.UseResponseCaching();
             app.UseHttpsRedirection();
 
             app.UseRouting();
