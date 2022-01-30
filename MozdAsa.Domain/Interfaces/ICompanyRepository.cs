@@ -11,6 +11,10 @@ namespace MozdAsa.Domain.Interfaces
     {
         IEnumerable<Company> GetCompanies();
         Company GetCompanyById(int CompanyId);
-        Task<int> CountCompanies();
+        int CountCompanies();
+        Task<bool> IsExists(int CompanyId);
+        Task<Company> AddCompany(Company company);
+        Task<Company> UpdateCompany(Company company);
+        Task<Company> RemoveCompany(int CompanyId);
     }
 }

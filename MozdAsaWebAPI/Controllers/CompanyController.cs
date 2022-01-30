@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using MozdAsa.Domain.Entity;
 
 namespace MozdAsaWebAPI.Controllers
 {
@@ -28,7 +29,7 @@ namespace MozdAsaWebAPI.Controllers
             {
                 StatusCode = (int)HttpStatusCode.OK
             };
-            //Request.HttpContext.Response.Headers.Add("X-Count", _companyService.GetCount().ToString());
+            Request.HttpContext.Response.Headers.Add("X-Count", _companyService.GetCount().ToString());
             Request.HttpContext.Response.Headers.Add("X-Name", "Mohammad Fateh");
             return result;       
         }
@@ -38,6 +39,31 @@ namespace MozdAsaWebAPI.Controllers
         {
             var company = _companyService.GetCompanyById(id);
             return Ok(company);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> RemoveCompany([FromRoute] int id)
+        {
+            await _companyService.RemoveCompany(id);
+            return Ok();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddCompany([FromBody] Company company)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            await _companyService.AddCompany(company);
+            return CreatedAtAction("GetCompany", new { id = company.Id }, company);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateCompany([FromRoute] int id, [FromBody] Company company)
+        {
+            await _companyService.UpdateCompany(company);
+           return Ok(company);
         }
     }
 }

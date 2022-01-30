@@ -21,9 +21,16 @@ namespace MozdAsa.Data.Repository
             _cache = cache;
         }
 
-        public async Task<int> CountCompanies()
+        public async Task<Company> AddCompany(Company company)
         {
-            return await _ctx.Companies.CountAsync();
+            await _ctx.Companies.AddAsync(company);
+            await _ctx.SaveChangesAsync();
+            return company;
+        }
+
+        public  int CountCompanies()
+        {
+            return _ctx.Companies.Count();
         }
 
         public IEnumerable<Company> GetCompanies()
@@ -45,6 +52,26 @@ namespace MozdAsa.Data.Repository
                 _cache.Set(CompanyId, company, cacheOption);
                 return company;
             }
+        }
+
+        public async Task<bool> IsExists(int CompanyId)
+        {
+            return await _ctx.Companies.AnyAsync(c => c.Id == CompanyId);
+        }
+
+        public async Task<Company> RemoveCompany(int CompanyId)
+        {
+            var company = await _ctx.Companies.SingleAsync(c => c.Id == CompanyId);
+            _ctx.Companies.Remove(company);
+            await _ctx.SaveChangesAsync();
+            return company;
+        }
+
+        public async Task<Company> UpdateCompany(Company company)
+        {
+            _ctx.Update(company);
+            await _ctx.SaveChangesAsync();
+            return company;
         }
     }
 }

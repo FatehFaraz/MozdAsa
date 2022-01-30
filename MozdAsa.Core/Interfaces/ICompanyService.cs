@@ -12,6 +12,10 @@ namespace MozdAsa.Core.Interfaces
     {
         CompanyViewModel GetCompany();
         Company GetCompanyById(int CompanyId);
-        Company GetCount();
+        int GetCount();
+        Task<bool> IsExists(int CompanyId);
+        Task<Company> RemoveCompany(int CompanyId);
+        Task<Company> AddCompany(Company company);
+        Task<Company> UpdateCompany(Company company);
     }
 }
