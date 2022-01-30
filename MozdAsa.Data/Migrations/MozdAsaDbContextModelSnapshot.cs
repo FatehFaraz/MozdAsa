@@ -75,7 +75,7 @@ namespace MozdAsa.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Companies");
+                    b.ToTable("Companies", (string)null);
                 });
 #pragma warning restore 612, 618
         }

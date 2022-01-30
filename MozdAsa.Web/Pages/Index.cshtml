@@ -1,10 +1,39 @@
-﻿@page
-@model IndexModel
+﻿@using MozdAsa.Web.Repository
+@model List<Company>
+
 @{
     ViewData["Title"] = "Home page";
+    int rowCount = 1;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<table class = "table table-border">
+    <tr>
+        <th>#</th>
+        <th>نام</th>
+        <th>شماره ثبت</th>
+        <th>شناسه ملی</th>
+        <th>نام کاربری</th>
+        <th>پست الکترونیک</th>
+        <th>شماره همراه</th>
+        <th>آدرس</th>
+        <th></th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@rowCount</td>
+            <td>@item.Name</td>
+            <td>@item.InsertNum</td>
+            <td>@item.NatinalCode</td>
+            <td>@item.UserName</td>
+            <td>@item.Email</td>
+            <td>@item.mobile</td>
+            <td>@item.Address</td>
+            <td>
+                <a href= "#" class= "btn btn-warning">Edit</a>
+                <a href = "#" class = "btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        rowCount++;
+    }
+</table>

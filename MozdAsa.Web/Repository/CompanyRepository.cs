@@ -1,12 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 
-namespace MozdAsa.Domain.Entity
+namespace MozdAsa.Web.Repository
 {
+    public class CompanyRepository
+    {
+        private string apiUrl = "https://localhost:5001/company";
+        private HttpClient _client;
+
+        public CompanyRepository()
+        {
+            _client = new HttpClient();
+        }
+
+        public List<Company> GetAllCompany()
+        {
+            var result = _client.GetStringAsync(apiUrl).Result;
+            List<Company> list = JsonConvert.DeserializeObject<List<Company>>(result);
+            return list;
+        }
+        public Company GetCompanyById(int companyId)
+        {
+            var result = _client.GetStringAsync(apiUrl + "/" + companyId).Result;
+            Company company = JsonConvert.DeserializeObject<Company>(result);
+            return company;
+        }
+        public void AddCompany(Company company)
+        {
+            string jsonCompany = JsonConvert.SerializeObject(company);
+            StringContent content = new StringContent(jsonCompany, Encoding.UTF8, "application/json");
+
+            var res = _client.PostAsync(apiUrl, content).Result;
+        }
+        public void UpdateCompany(Company company)
+        {
+            string jsonCompany = JsonConvert.SerializeObject(company);
+            StringContent content = new StringContent(jsonCompany, Encoding.UTF8, "application/json");
+
+            var res = _client.PutAsync(apiUrl, content).Result;
+        }
+        public void DeleteCompany(int CompanyId)
+        {
+            var res = _client.DeleteAsync(apiUrl + "/" + CompanyId).Result;
+        }
+    }
+
     public class Company
     {
         public int Id { get; set; }
